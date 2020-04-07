@@ -68,6 +68,20 @@
     return self;
 }
 
+- (instancetype)initWithWebview:(WKWebView*)webview;
+{
+    self = [super init];
+    if (self) {
+        if (NSClassFromString(@"WKWebView") == nil) {
+            return nil;
+        }
+
+        self.engineWebView = webview;
+    }
+
+    return self;
+}
+
 - (WKWebViewConfiguration*) createConfigurationFromSettings:(NSDictionary*)settings
 {
     WKWebViewConfiguration* configuration = [[WKWebViewConfiguration alloc] init];

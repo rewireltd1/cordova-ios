@@ -24,6 +24,8 @@
 #define kCDVWebViewEngineWKUIDelegate @"kCDVWebViewEngineWKUIDelegate"
 #define kCDVWebViewEngineWebViewPreferences @"kCDVWebViewEngineWebViewPreferences"
 
+@class WKWebView;
+
 @protocol CDVWebViewEngineProtocol <NSObject>
 
 @property (nonatomic, strong, readonly) UIView* engineWebView;
@@ -36,6 +38,7 @@
 - (BOOL)canLoadRequest:(NSURLRequest*)request;
 
 - (instancetype)initWithFrame:(CGRect)frame;
+- (instancetype)initWithWebview:(WKWebView*)webview;
 - (void)updateWithInfo:(NSDictionary*)info;
 
 @end
